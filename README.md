@@ -5,9 +5,6 @@ frontend hiring challenge. Xai is a fictional AI product; the page's job is to
 *show*, through motion and geometry rather than copy, how it turns raw data into
 structured intelligence and actionable insight.
 
-**Live demo:** _add your Vercel/Netlify URL here_
-**Walkthrough video:** _add your unlisted YouTube / Google Drive link here_ (script used to record it: [`VIDEO-SCRIPT.md`](./VIDEO-SCRIPT.md))
-
 ---
 
 ## Overview & technical approach
