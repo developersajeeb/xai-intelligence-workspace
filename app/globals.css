@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* Xai design tokens — keep in sync with DESIGN-SYSTEM.md */
+:root {
+  --background: #0a0a0b;
+  --foreground: #f5f5f7;
+  --surface: #131316;
+  --surface-2: #1b1b1f;
+  --border-subtle: #232327;
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1aa;
+  --text-muted: #86868c;
+  --accent: #5b8cff;
+  --accent-strong: #3d6fe0;
+  --data-1: #5b8cff;
+  --data-2: #34d399;
+  --data-3: #a78bfa;
+  --data-4: #f59e0b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border-subtle: var(--border-subtle);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-data-1: var(--data-1);
+  --color-data-2: var(--data-2);
+  --color-data-3: var(--data-3);
+  --color-data-4: var(--data-4);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Ambient section backgrounds (components/ui/AmbientGlow.tsx) — a faint,
+   slowly panning dot grid layered under the blurred glow blobs. */
+@keyframes ambient-grid-pan {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 28px 28px;
+  }
+}
+
+@keyframes ambient-grid-pan-reverse {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -28px 28px;
+  }
+}
+
+.ambient-grid {
+  background-image: radial-gradient(circle, rgba(91, 140, 255, 0.35) 1px, transparent 1px);
+  background-size: 28px 28px;
+  animation: ambient-grid-pan 60s linear infinite;
+}
+
+.ambient-grid-reverse {
+  animation-name: ambient-grid-pan-reverse;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-grid {
+    animation: none;
+  }
+}
